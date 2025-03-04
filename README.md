@@ -1,1 +1,1 @@
- <img src="https://tenor.com/en-GB/view/venom-gif-27487650"/>
+![schizo](https://i.kym-cdn.com/photos/images/newsfeed/002/347/436/640.jpg)
