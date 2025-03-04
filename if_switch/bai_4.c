@@ -13,6 +13,9 @@ int main()
         printf("3 canh khong hop le");
         return 0;
     }
+    double nua_chu_vi=(a+b+c)/2;
+    double dien_tich=sqrt((nua_chu_vi)*(nua_chu_vi-a)*(nua_chu_vi-b)*(nua_chu_vi-c));
+    printf("Chu vi: %lf\nDien tich: %lf\n", nua_chu_vi*2.0, dien_tich);
     if ((a*a+b*b==c*c)||(a*a+c*c==b*b)||(c*c+b*b==a*a))
     {
         Vuong=1;
