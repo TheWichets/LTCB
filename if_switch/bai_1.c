@@ -13,7 +13,7 @@ int main()
     {
         printf("Phuong trinh co 2 nghiem: %lf va %lf", (-b+sqrt(delta))/(2*a), (-b-sqrt(delta))/(2*a));
     }
-    else if (delta=0)
+    else if (delta==0)
     {
         printf("Phuong trinh co nghiem kep: %lf", -b/(2*a));
     }
