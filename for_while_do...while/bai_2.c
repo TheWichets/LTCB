@@ -4,6 +4,7 @@
 
 int main() {
 	int i, d, flag=0;
+	printf("Nhap 1 so ");
     scanf("%d", &d);
 
     if (d==0||d==1){
@@ -16,7 +17,7 @@ int main() {
         }
     }
     if (flag==1){
-        printf("Co");
-    } else printf("Khong");
+        printf("Co la so nguyen to");
+    } else printf("Khong la so nguyen to");
     return 0;
 }
