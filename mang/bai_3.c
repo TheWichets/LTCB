@@ -79,5 +79,6 @@ int main(){
     printf("Trung binh cong cua ca mang = %lf\n", TBC(x, n, KHONG_CAN));
     printf("Trung binh cong cua so nguyen duong = %lf\n", TBC(x, n, DUONG));
     printf("Trung binh cong cua so nguyen am = %lf\n", TBC(x, n, AM));
+    free(x);
     return 0;
 }
