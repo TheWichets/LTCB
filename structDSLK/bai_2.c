@@ -6,7 +6,7 @@ typedef struct
 {
     char HoTen[101];
     int Tuoi;
-    int DiemTB;
+    double DiemTB;
 } SinhVien;
 
 typedef struct Node
@@ -60,7 +60,7 @@ void inputSinhVien(SinhVien *sv)
     scanf("%d", &sv->Tuoi);
     getchar();
     printf("DiemTB: ");
-    scanf("%d", &sv->DiemTB);
+    scanf("%lf", &sv->DiemTB);
     getchar();
 }
 
@@ -138,7 +138,7 @@ void printList(LinkedList *list)
     }
     while (node != NULL)
     {
-        printf("%5d %20s %10d %10d \n", i, node->data.HoTen, node->data.Tuoi, node->data.DiemTB);
+        printf("%5d %20s %10d %10.2f \n", i, node->data.HoTen, node->data.Tuoi, node->data.DiemTB);
         i++;
         node = node->next;
     }
@@ -174,31 +174,41 @@ int main()
         printf("Chon chuong trinh:\n1. Tao danh sach moi\n2. In danh sach.\n3. Chen sinh vien.\n4. Bo sinh vien.\n0. Thoat chuong trinh\n");
         scanf("%d", &i);
         getchar();
-        if (i == 1)
+        switch(i)
         {
-            printf("Nhap so sinh vien can nhap: ");
-            scanf("%d", &n);
-            getchar();
-            inputList(list, n);
-
-        }
-        if (i == 2)
-        {   
-            printList(list);
-        }
-        if (i == 3)
-        {
-            printf("Can chen truoc sinh vien? \n");
-            fgets(KeyTen, 101, stdin);
-            KeyTen[strcspn(KeyTen, "\n")] = '\0';
-            ChenSinhVien(list, KeyTen);
-        }
-        if (i == 4)
-        {
-            printf("Ten sinh vien can bo: ");
-            fgets(KeyTen, 101, stdin);
-            KeyTen[strcspn(KeyTen, "\n")] = '\0';
-            BoSinhVien(list, KeyTen);
+            case 1:
+            {
+                printf("Nhap so sinh vien can nhap: ");
+                scanf("%d", &n);
+                getchar();
+                inputList(list, n);
+                break;
+            }
+            case 2:
+            {   
+                printList(list);
+                break;
+            }
+            case 3:
+            {
+                printf("Can chen truoc sinh vien? \n");
+                fgets(KeyTen, 101, stdin);
+                KeyTen[strcspn(KeyTen, "\n")] = '\0';
+                ChenSinhVien(list, KeyTen);
+                break;
+            }
+            case 4:
+            {
+                printf("Ten sinh vien can bo: ");
+                fgets(KeyTen, 101, stdin);
+                KeyTen[strcspn(KeyTen, "\n")] = '\0';
+                BoSinhVien(list, KeyTen);
+                break;
+            }
+            default:
+            {
+                printf("Khong ton tai lua chon\n");
+            }
         }
     }
     return 0;
