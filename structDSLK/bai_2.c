@@ -205,6 +205,8 @@ int main()
                 BoSinhVien(list, KeyTen);
                 break;
             }
+            case 0: 
+            break;
             default:
             {
                 printf("Khong ton tai lua chon\n");
