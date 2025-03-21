@@ -8,9 +8,9 @@ int main() {
     scanf("%d", &d);
 
     if (d==0||d==1){
-        flag =1;
+        flag =0;
     }
-    for (i=2; i<=n/2; ++i){
+    for (i=2; i<=sqrt(d); ++i){
         if (d % i == 0){
             flag=0;
             break;

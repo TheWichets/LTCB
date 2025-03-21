@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define M_PI 3.14159265358979323846
+
 int main()
 {
     double eps, n, x, sin;
@@ -13,6 +15,7 @@ int main()
     printf("Nhap eps:");
     scanf("%lf", &eps);
 
+    printf("sin(%f) =", x);
     double radian=x*M_PI/180;
     n=radian;
     sin=n;
@@ -27,6 +30,6 @@ int main()
         sin+=n;
         i++;
     } while (fabs(n)>eps);
-    printf("sin(%f) = %f", radian, sin);
+    printf(" %f", sin);
     return 0;
 }
