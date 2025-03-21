@@ -83,6 +83,48 @@ void inputList(LinkedList *list,int n)
     }
 }
 
+Node* split(Node *head) {
+    Node* fast = head;
+    Node* slow = head;
+    while (fast != NULL && fast->next != NULL) {
+        fast = fast->next->next;
+        if (fast != NULL) {
+            slow = slow->next;
+        }
+    }
+    Node* temp = slow->next;
+    slow->next = NULL;
+    return temp;
+}
+
+Node* merge(Node* first, Node* second) 
+{
+    if (first == NULL) return second;
+    if (second == NULL) return first;
+    if (first->data.TenHang[0] < second->data.TenHang[0]) {
+        first->next = merge(first->next, second);
+        return first;
+    }
+    else {
+        second->next = merge(first, second->next);
+        return second;
+    }
+}
+
+Node* MergeSort(Node *head)
+{
+    if (head==NULL || head->next == NULL)
+    {
+        return head;
+    }
+    Node* second = split(head);
+
+    head=MergeSort(head);
+    second=MergeSort(second);
+
+    return merge(head, second);
+}
+
 void printList(LinkedList *list)
 {
     int Tong=0;
@@ -108,6 +150,10 @@ int main()
     scanf("%d", &n);
     getchar();
     inputList(list, n);
+    printList(list);
+
+    printf("Danh sach sau khi sap xep: ");
+    list->first = MergeSort(list->first);
     printList(list);
     return 0;
 }
